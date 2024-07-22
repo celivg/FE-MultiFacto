@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function multiFactorial(numero) {
+
+      //Condicional para que si el usuario ingresa otro numero que no sea el indicado la funcion no funcione 
+      if (numero < 1 || numero > 20) {
+        alert("Número fuera de rango, sólo se aceptan números del 1 al 20 ⚠")
+        return;
+      }
+
+      document.write(`El resultado para: ${numero} es <br>`);
+
+      // Multiplicación
+      for (let i = 1; i <= numero; i++) {
+        let resultado = i * numero;
+        document.write(`${i} * ${numero}  = ${resultado} <br>`);
+        console.log(`${i} * ${numero}  = ${resultado} <br>`);
+      }
+
+      // Calcular factoriales
+      for (let i = 1; i <= numero; i++) {
+        let factorial = calcularFactorial(i);
+        document.write(`Factorial de ${i} es: ${factorial} <br>`);
+        console.log(`Factorial de ${i} es: ${factorial} <br>`);
+      }
+    }
+
+    //Ciclo para calcular factorial de x numero
+    function calcularFactorial(n) {
+      if (n === 0 || n === 1) {
+        return 1;
+      }
+      let factorial = 1;
+      for (let i = 2; i <= n; i++) {
+        factorial *= i;
+      }
+      return factorial;
+    }
+
+    let numero = Number(prompt("Ingrese un número del 1 al 20"));
+    multiFactorial(numero);
+  </script>
+</body>
+
+</html>
